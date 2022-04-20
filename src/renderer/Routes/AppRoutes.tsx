@@ -1,33 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import { Col, Row } from 'react-bootstrap';
-import { BrowserRouter } from 'react-router-dom';
-import Page1 from 'renderer/Pages/Page1/Page1';
-import Page2 from 'renderer/Pages/Page2/Page2';
-import TopNavBar from './TopNavBar';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { routes } from './Elements';
 
+/**
+ * Definisce il routing delle pagine
+ * @returns Il component con navbar e router delle pagine
+ */
 function AppRoutes() {
-  const routes = [
-    {
-      id: 0,
-      path: '/page1',
-      text: 'Page1',
-      main: () => <Page1 />,
-    },
-    {
-      id: 1,
-      path: '/page2',
-      text: 'Page2',
-      main: () => <Page2 />,
-    },
-  ];
-
   return (
     <BrowserRouter>
-      <Row id="row-router-header-navbar">
-        <Col id="col-router-header-navbar">
-          <TopNavBar />
-        </Col>
-      </Row>
+      <Navbar bg="light" expand="lg">
+        <Container fluid>
+          <Navbar.Brand>PatGest</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              {routes.map((r) => (
+                <Nav.Link id={r.path} href={r.path}>
+                  {r.text}
+                </Nav.Link>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Routes>
+        {routes.map((r) => (
+          <Route path={r.path} element={r.main} />
+        ))}
+      </Routes>
     </BrowserRouter>
   );
 }
