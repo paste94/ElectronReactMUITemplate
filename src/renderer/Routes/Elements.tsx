@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
-import Page1 from 'renderer/Pages/Page1/Page1';
 import Page2 from 'renderer/Pages/Page2/Page2';
+import Home from 'renderer/Pages/Home/Home';
+import Patients from 'renderer/Pages/Patients/Patients';
 
 /**
  * Definisce il tipo dell'oggetto che deve
@@ -20,9 +21,15 @@ type RouteType = {
 const routes: Array<RouteType> = [
   {
     id: 0,
-    path: '/page1',
-    text: 'Page1',
-    main: <Page1 />,
+    path: '/',
+    text: 'Home',
+    main: <Home />,
+  },
+  {
+    id: 0,
+    path: '/patients',
+    text: 'Patients',
+    main: <Patients />,
   },
   {
     id: 1,
