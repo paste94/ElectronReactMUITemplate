@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import Page2 from 'renderer/Pages/Page2/Page2';
 import Home from 'renderer/Pages/Home/Home';
 import Patients from 'renderer/Pages/Patients/Patients';
+import Settings from 'renderer/Pages/Settings/Settings';
 
 /**
  * Definisce il tipo dell'oggetto che deve
@@ -33,9 +33,9 @@ const routes: Array<RouteType> = [
   },
   {
     id: 1,
-    path: '/page2',
-    text: 'Page2',
-    main: <Page2 />,
+    path: '/settings',
+    text: 'Settings',
+    main: <Settings />,
   },
 ];
 

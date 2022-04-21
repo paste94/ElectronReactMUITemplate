@@ -4,6 +4,7 @@ import icon from '../../assets/icon.svg';
 import AppRoutes from './Routes/AppRoutes';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AppRoutesMaterial from './Routes/AppRoutesMaterial';
 
 const Hello = () => {
   return (
@@ -44,6 +45,6 @@ const Hello = () => {
 
 export default function App() {
   return (
-    <AppRoutes />
+    <AppRoutesMaterial />
   );
 }
