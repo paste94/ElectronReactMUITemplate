@@ -8,6 +8,12 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': ['warn'],
     'spaced-comment': 'warn',
+    "react/jsx-props-no-spreading": [<enabled>, {
+      "html": "enforce",
+      "custom": "enforce",
+      "explicitSpread": "enforce",
+      "exceptions": [<string>]
+    }]
   },
   parserOptions: {
     ecmaVersion: 2020,
