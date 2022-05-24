@@ -90,7 +90,7 @@ const AppDrawer = (props: Props) => {
               <MenuList>
                 {routes.map((prop) => {
                 return (
-                  <ListItemLink to={prop.path} primary={prop.text} icon={prop.icon}/>
+                  <ListItemLink key={prop.id} to={prop.path} primary={prop.text} icon={prop.icon}/>
                 );
               })}
               </MenuList>

@@ -24,7 +24,7 @@ const AppRoutesMaterial = (/*props: Props*/) => {
         <TopApBar />
         <Routes>
           {routes.map((r) => (
-            <Route path={r.path} element={r.main} />
+            <Route key={r.id} path={r.path} element={r.main} />
           ))}
         </Routes>
       </Grid>
