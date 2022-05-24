@@ -1,5 +1,5 @@
 # Electron React with MUI and Routing for navigation
-This is a boilerplate for quickly start development of an Electron React MUI and Routing application. This app provides you everything needed for starting create an application with Sidebar, Router and a list of Pages which can be navigated. 
+This is a boilerplate for quickly start development of an Electron React MUI and Routing desktop application. This app provides you everything needed for starting create an application with Sidebar, Router and a list of Pages which can be navigated. 
 
 # Application Structure
 This Application comes with a `src` folder in which you can find everything you need. Let's see them one by one and take a look at their logic:

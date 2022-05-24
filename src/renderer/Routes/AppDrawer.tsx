@@ -76,7 +76,7 @@ const AppDrawer = (props: Props) => {
                   >
                   { opened &&
                     <Grid item>
-                      <h5 style={{marginTop: '0.5rem'}}>electron_eeact_mui_template</h5>
+                      <h5 style={{marginTop: '0.5rem'}}>APP</h5>
                     </Grid>
                   }
                   <Grid item>
