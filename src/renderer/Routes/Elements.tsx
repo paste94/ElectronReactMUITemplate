@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import Home from 'renderer/Pages/Home/Home';
-import Patients from 'renderer/Pages/Patients/Patients';
+import Users from 'renderer/Pages/Users/Users';
 import Settings from 'renderer/Pages/Settings/Settings';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -33,9 +33,9 @@ const routes: Array<RouteType> = [
   },
   {
     id: 1,
-    path: '/patients',
-    text: 'Patients',
-    main: <Patients />,
+    path: '/users',
+    text: 'Users',
+    main: <Users />,
     icon: <PersonIcon />,
   },
   {
