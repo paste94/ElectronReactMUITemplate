@@ -45,4 +45,13 @@ const routes: Array<RouteType> = [
   },
 ];
 
-export { RouteType, routes };
+const getText = (path: String) => {
+  let ret = 'ERROR: Element not found!!!'
+  routes.forEach((element) => {
+    if (element.path === path)
+      ret = element.text
+  })
+  return ret
+}
+
+export { RouteType, routes, getText};

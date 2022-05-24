@@ -1,19 +1,14 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Toolbar, Typography } from '@mui/material'
+import { useLocation } from 'react-router-dom'
+import { getText } from './Elements';
 
-type Props = {
-  toggle: () => void
-}
-
-const TopAppBar = ({toggle}: Props) => {
+const TopAppBar = () => {
+  console.log(useLocation())
   return (
     <AppBar position='static'>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggle}>
-          <MenuIcon />
-        </IconButton>
         <Typography variant="h6" >
-          PatGest
+          {getText(useLocation().pathname)}
         </Typography>
       </Toolbar>
     </AppBar>

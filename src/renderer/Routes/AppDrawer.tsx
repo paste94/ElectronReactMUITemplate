@@ -1,4 +1,4 @@
-import { Box, Divider, Drawer, ListItem, ListItemIcon, ListItemText, MenuList } from '@mui/material'
+import { Box, Divider, Drawer, ListItem, ListItemIcon, ListItemText, MenuList, Toolbar } from '@mui/material'
 import React from 'react'
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import { routes } from './Elements'
@@ -43,33 +43,23 @@ function ListItemLink(props: ListItemLinkProps) {
 }
 
 /**
- * Defines the type of props for AppDrawer
- */
- type Props = {
-  isOpen: boolean,
-  toggle: () => void
-}
-
-/**
  * Creates a Drawer component for navigation using Routers
  * @param param0 isOpen defines the state od Drawer, toggle is a function that lets you toggle the Drawer
  * @returns The Drawer component
  */
-const AppDrawer = ({isOpen, toggle}: Props) => {
+const AppDrawer = () => {
   return (
     <React.Fragment >
-      <Drawer anchor='left' open={isOpen} onClose={toggle}>
+      <Drawer variant='permanent' anchor='left'>
         <div
           role="presentation"
-          onClick={toggle}
-          onKeyDown={toggle}
         >
           <Box
-            sx={{ width: 250 }}
+            sx={{ width: 200 }}
             role="presentation"
-            onClick={toggle}
-            onKeyDown={toggle}
           >
+            <Toolbar><h5>PatGest</h5></Toolbar>
+            <Divider />
             <MenuList>
               {routes.map((prop) => {
               return (
