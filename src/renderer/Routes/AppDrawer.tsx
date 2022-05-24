@@ -1,8 +1,10 @@
-import { Box, Divider, Drawer, ListItem, ListItemIcon, ListItemText, MenuList, Toolbar } from '@mui/material'
-import React from 'react'
+import { Box, Divider, Drawer, Grid, IconButton, ListItem, ListItemIcon, ListItemText, MenuList, Toolbar } from '@mui/material'
+import React, { useState } from 'react'
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
-import { routes } from './Elements'
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import { closedDrawerWidth, openedDrawerWidth, routes } from './Elements'
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
 
 /**
  * Defines the type of props for ListItemLink
@@ -42,12 +44,19 @@ function ListItemLink(props: ListItemLinkProps) {
   );
 }
 
+type Props = {
+  opened: Boolean,
+  toggle: () => void,
+}
+
 /**
  * Creates a Drawer component for navigation using Routers
  * @param param0 isOpen defines the state od Drawer, toggle is a function that lets you toggle the Drawer
  * @returns The Drawer component
  */
-const AppDrawer = () => {
+const AppDrawer = (props: Props) => {
+  const {opened, toggle} = props
+
   return (
     <React.Fragment >
       <Drawer variant='permanent' anchor='left'>
@@ -55,10 +64,24 @@ const AppDrawer = () => {
           role="presentation"
         >
           <Box
-            sx={{ width: 200 }}
+            sx={{ width: opened ? openedDrawerWidth : closedDrawerWidth }}
             role="presentation"
           >
-            <Toolbar><h5>PatGest</h5></Toolbar>
+            <Toolbar>
+              <Grid
+                container
+                justifyContent="space-between"
+                 >
+                <Grid item>
+                  {opened && <h5 style={{marginTop: '0.5rem'}}>PatGest</h5>}
+                </Grid>
+                <Grid item>
+                  <IconButton edge="start" style={{color:'#b0bec5'}} title={opened ? 'Comprimi' : 'Espandi'} onClick={toggle}>
+                    {opened ? <KeyboardArrowLeftIcon/> : <KeyboardArrowRightIcon/>}
+                  </IconButton>
+                </Grid>
+              </Grid>
+            </Toolbar>
             <Divider />
             <MenuList>
               {routes.map((prop) => {

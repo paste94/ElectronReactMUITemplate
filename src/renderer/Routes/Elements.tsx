@@ -54,4 +54,7 @@ const getText = (path: String) => {
   return ret
 }
 
-export { RouteType, routes, getText};
+const openedDrawerWidth = 200;
+const closedDrawerWidth = 55;
+
+export { RouteType, routes, getText, openedDrawerWidth, closedDrawerWidth};
