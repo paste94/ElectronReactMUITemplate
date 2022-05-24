@@ -22,11 +22,21 @@ There is the core of this library. Here there are a lot of customized files that
 
 # Instalation guide
 To install this template you need install Node in your PC, then run 
-- `npm install` to install all dependencies
-- `npm start` to start program
+```
+git clone --depth 1 --branch main https://github.com/paste94/ElectronReactMUITemplate.git your-project-name
+cd your-project-name
+npm install
+```
+
+To run this software run
+```
+npm start
+```
 
 # Packaging
-To package your program, creating an instllation file, you must run `npm package`. You can check all settings in the React Electron Boilerplate documentation [here](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
+To package your program, creating an instllation file, you must run 
+```npm package``` 
+You can check all settings in the React Electron Boilerplate documentation [here](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
 
 # Citation to other repositories
 - [Electron JS](https://www.electronjs.org)
