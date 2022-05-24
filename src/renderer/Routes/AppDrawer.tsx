@@ -1,4 +1,4 @@
-import { Box, Divider, Drawer, Grid, IconButton, ListItem, ListItemIcon, ListItemText, MenuList, Toolbar } from '@mui/material'
+import { Box, Collapse, Divider, Drawer, Grid, IconButton, ListItem, ListItemIcon, ListItemText, MenuList, Toolbar } from '@mui/material'
 import React, { useState } from 'react'
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import { closedDrawerWidth, openedDrawerWidth, routes } from './Elements'
@@ -45,7 +45,7 @@ function ListItemLink(props: ListItemLinkProps) {
 }
 
 type Props = {
-  opened: Boolean,
+  opened: boolean,
   toggle: () => void,
 }
 
@@ -63,35 +63,39 @@ const AppDrawer = (props: Props) => {
         <div
           role="presentation"
         >
-          <Box
-            sx={{ width: opened ? openedDrawerWidth : closedDrawerWidth }}
-            role="presentation"
-          >
-            <Toolbar>
-              <Grid
-                container
-                justifyContent="space-between"
-                 >
-                <Grid item>
-                  {opened && <h5 style={{marginTop: '0.5rem'}}>PatGest</h5>}
+          <Collapse in={opened} collapsedSize={closedDrawerWidth} orientation='horizontal'>
+            <Box
+              sx={{ width: openedDrawerWidth }}
+              role="presentation"
+            >
+              <Toolbar>
+                <Grid
+                  container
+                  justifyContent="space-between"
+                  alignContent='left'
+                  >
+                  { opened &&
+                    <Grid item>
+                      <h5 style={{marginTop: '0.5rem'}}>PatGest</h5>
+                    </Grid>
+                  }
+                  <Grid item>
+                    <IconButton edge="start" style={{color:'#b0bec5'}} title={opened ? 'Comprimi' : 'Espandi'} onClick={toggle}>
+                      {opened ? <KeyboardArrowLeftIcon/> : <KeyboardArrowRightIcon/>}
+                    </IconButton>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <IconButton edge="start" style={{color:'#b0bec5'}} title={opened ? 'Comprimi' : 'Espandi'} onClick={toggle}>
-                    {opened ? <KeyboardArrowLeftIcon/> : <KeyboardArrowRightIcon/>}
-                  </IconButton>
-                </Grid>
-              </Grid>
-            </Toolbar>
-            <Divider />
-            <MenuList>
-              {routes.map((prop) => {
-              return (
-                <ListItemLink to={prop.path} primary={prop.text} icon={prop.icon}/>
-              );
-            })}
-            </MenuList>
-
-          </Box>
+              </Toolbar>
+              <Divider />
+              <MenuList>
+                {routes.map((prop) => {
+                return (
+                  <ListItemLink to={prop.path} primary={prop.text} icon={prop.icon}/>
+                );
+              })}
+              </MenuList>
+            </Box>
+          </Collapse>
         </div>
       </Drawer>
     </React.Fragment>
