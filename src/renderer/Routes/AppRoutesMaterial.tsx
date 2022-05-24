@@ -30,27 +30,6 @@ const AppRoutesMaterial = (/*props: Props*/) => {
       </Grid>
     </Grid>
   );
-
-  /*
-  return (
-    <Grid container spacing={0}>
-      <Collapse orientation="horizontal" in={opened} collapsedSize={closedDrawerWidth}>
-        <Grid item style={{width: openedDrawerWidth}}>
-            <AppDrawer opened={opened} toggle={toggle}/>
-        </Grid>
-      </Collapse>
-
-      <Grid item xs>
-        <TopApBar />
-        <Routes>
-          {routes.map((r) => (
-            <Route path={r.path} element={r.main} />
-          ))}
-        </Routes>
-      </Grid>
-    </Grid>
-  );
-  */
 };
 
 export default AppRoutesMaterial;
