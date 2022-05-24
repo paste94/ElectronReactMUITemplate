@@ -28,14 +28,16 @@ cd your-project-name
 npm install
 ```
 
-To run this software run
+To test this software run
 ```
 npm start
 ```
 
 # Packaging
-To package your program, creating an instllation file, you must run 
-```npm package``` 
+To package your program, creating an installation file, you must run 
+```
+npm package
+``` 
 You can check all settings in the React Electron Boilerplate documentation [here](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
 
 # Citation to other repositories
