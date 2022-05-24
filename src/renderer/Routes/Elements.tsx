@@ -5,6 +5,8 @@ import Settings from 'renderer/Pages/Settings/Settings';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import PersonIcon from '@mui/icons-material/Person';
+
+
 /**
  * Definisce il tipo dell'oggetto che deve
  * essere utilizzato per creare una entry nella
